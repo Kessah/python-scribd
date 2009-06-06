@@ -84,7 +84,7 @@ class *VirtualUser*([User])
             The user has to be the owner of this document. 
          
         Returns: 
-          A [Document] objects. 
+          A [Document] object. 
      
     *upload*(self, file, `*``*`kwargs) 
         Uploads a new document and returns a document object. 
@@ -106,7 +106,7 @@ class *VirtualUser*([User])
             the "name" attribute. 
          
         Returns: 
-          A [Document] objects. 
+          A [Document] object. 
      
     *xall*(self, `*``*`kwargs) 
         Similar to all() method but returns a generator object 
