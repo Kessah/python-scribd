@@ -164,4 +164,4 @@ Establishing a true document owner may not always be possible, for example if th
 
 The implication is that if the owner object isn't a true owner of the document, operations like `load()` or `save()` cannot be performed and fail.
 
-We used two ways of creating a [Document] object in the above example, both of which are able to clearly determine the owner so these calls were safe.
+In the above example, we've used two ways of creating a [Document] objects (`upload()` and `all()`), both of which are able to clearly determine the owner. Therefore it was safe to call `load()`and `save()` on these objects.
