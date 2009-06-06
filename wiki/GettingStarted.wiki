@@ -73,10 +73,95 @@ The API also lets you log as a different user while still using your API account
 jsmith_user = scribd.login('jsmith', 'password')
 }}}
 
-You can also log yourself in. This may seem redundant but overcomes one limitation of the `api_user` object. Unlike other [User] objects, it doesn't have attributes like `name` or `username`. This may be important to you or not, depending on what you want to accomplish.
+You can also log yourself in. This may seem redundant but overcomes one limitation of the `api_user` object. Unlike other [User] objects, it doesn't support resource attributes like `name` or `username`. This may be important to you or not, depending on what you want to accomplish.
+
+A small digression on the *resource attributes* as it may be puzzling what they are. Basically, they are just like any other object attributes. The special thing about them is that they are defined by the responses of the Scribd API host, the library doesn't know their names or meaning (with few exceptions). This is exactly the reason why `api_user` has no resource attributes - it isn't created by an API call and there is no response to define them.
 
 Finally your can sign up for a new user account using the `signup()` function from the [scribd] module.
 
 {{{
-johndoe_user = scribd.signup('johndoe', 'password', 'johndow@example.com')
+johndoe_user = scribd.signup('johndoe', 'password', 'johndoe@example.com')
 }}}
+
+== Virtual users ==
+
+Another users related feature are the virtual users. This mechanism lets you create "phantom" users within your API account. In other words, it lets you easily divide documents stored on your API account between virtual users. This is intended to make it easy for web applications with their own user authentication systems to integrate with Scribd's user model.
+
+To create a virtual user, either for the first time or later, you instantiate the VirtualUser class:
+
+{{{
+phantom = scribd.VirtualUser('phantom')
+}}}
+
+In this example, `'phantom'` is the name of your choosing for the virtual user. VirtualUser objects derive from [User] objects and as such, provide all their documents management functionality.
+
+Virtual users don't support resource attributes, similarly to the `api_user` object.
+
+== Documents ==
+
+If you're read the [User] object documentation, you know that it provides you with various ways for searching, listing or uploading of documents. For example the `upload()` method is used to put a new document on the Scribd platform. Here's how it could be used:
+
+{{{
+>>> document = user.upload(open('some_document.pdf', 'rb'))
+}}}
+
+In this example, the `user` is the [User] or [VirtualUser] object as described in previous chapter. We pass an opened file object tp the `upload()` method. The method will read the file and send it to the server along with the filename read from the file object's `name` attribute.
+
+The method returns a [Document] object which represents a document on the Scribd platform.
+
+It is good to know now what resource attributes are as a document may provide a different set depending on how it was obtained. Freshly uploaded document have almost no attributes. This is intentional as we want to set them first:
+
+{{{
+>>> from datetime import date
+>>> document.author = 'John Smith'
+>>> document.when_published = date.today().isoformat() # Returns date in 'YYYY-MM-DD' format.
+>>> document.license = 'pd'
+}}}
+
+We've used the `datetime` module to get today's date in ISO format required for the `when_published` attribute.
+
+One very important step remains before we're done setting the attributes:
+
+{{{
+>>> document.save()
+}}}
+
+This sends the values to the Scribd API host.
+
+Now lets do a little test and see if the values were really saved. First we'll discard the current document object:
+
+{{{
+>>> del document
+}}}
+
+Now we're going to list all documents already uploaded.
+
+{{{
+>>> all_documents = user.all()
+>>> document = all_documents[0]
+}}}
+
+Assuming that we're using a fresh user account and we've uploaded the example document in one of the previous steps, the `all()` call will return a list with a single [Document] object which we assign to the `document` variable.
+
+To save bandwidth during the `all()` call, not all resource attributes of the document objects are transmitted and set. We have to explicitly load them:
+
+{{{
+>>> document.load()
+}}}
+
+Now we should be able to read back our attributes:
+
+{{{
+>>> document.author
+'John Smith'
+>>> document.when_published
+'2009-06-06'
+}}}
+
+One thing to note here that happens behind the scenes is that the [Document] objects perform all operations through their owner - a [User] object stored in the document's `owner` attribute.
+
+Establishing a true document owner may not always be possible, for example if the document objects are created by searching in the public documents library. In such case, a fallback user is used, the already known `api_user` object.
+
+The implication is that if the owner object isn't a true owner of the document, operations like `load()` or `save()` cannot be performed and fail.
+
+We used two ways of creating a [Document] object in the above example, both of which are able to clearly determine the owner so these calls were safe.
