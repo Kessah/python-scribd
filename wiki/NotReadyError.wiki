@@ -1,16 +1,16 @@
 <pre>
 class *NotReadyError*(exceptions.Exception) 
- |  Exception raised if operation is attempted before the API key and 
- |  secret are set. 
- |   
- |  Method resolution order: 
- |      [NotReadyError] 
- |      exceptions.Exception 
- |      exceptions.BaseException 
- |      object 
- |   
- |  Data descriptors inherited from exceptions.BaseException: 
- |   
- |  *args* 
- |   
- |  *message* </pre>
+    Exception raised if operation is attempted before the API key and 
+    secret are set. 
+     
+    Method resolution order: 
+        [NotReadyError] 
+        exceptions.Exception 
+        exceptions.BaseException 
+        object 
+     
+    Data descriptors inherited from exceptions.BaseException: 
+     
+    *args* 
+     
+    *message* </pre>

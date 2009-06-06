@@ -1,149 +1,149 @@
 <pre>
 class *VirtualUser*([User]) 
- |  Provides an easy way to implement virtual users within the current 
- |  Scribd API account. 
- |   
- |  This is useful if Scribd is used as a backend for a platform with its 
- |  own user authentication system. 
- |   
- |  Virtual users are created just by instantiating this class passing the 
- |  name of the virtual user to the constructor. This will most probably 
- |  by the name used by your own authentication system. 
- |   
- |  Because this is a subclass of the User class, the virtual users provide 
- |  the same set of operations (except get_autologin_url()) as normal users. 
- |   
- |  Resource attributes: 
- |    None. 
- |   
- |  Method resolution order: 
- |      [VirtualUser] 
- |      [User] 
- |      [Resource] 
- |      object 
- |   
- |  Methods defined here: 
- |   
- |  *get_autologin_url*(self, next_path='') 
- |      This method is not supported by virtual users. 
- |   
- |  ---------------------------------------------------------------------- 
- |  Methods inherited from [User]: 
- |   
- |  *all*(self, **kwargs) 
- |      Returns a list of all user documents. 
- |       
- |      Parameters: 
- |        Refer to the "Parameters" section of: 
- |        http://www.scribd.com/developers/api?method_name=docs.getList 
- |         
- |        Parameters "api_key", "api_sig", "session_key", "my_user_id" 
- |        are managed internally by the library. 
- |   
- |  *find*(self, query, **kwargs) 
- |      Searches for documents and returns a list of them. 
- |       
- |      Parameters: 
- |        Refer to the "Parameters" section of: 
- |        http://www.scribd.com/developers/api?method_name=docs.search 
- |         
- |        Parameters "api_key", "api_sig", "session_key", "my_user_id" 
- |        are managed internally by the library. 
- |       
- |        Parameter "num_start" is not supported. 
- |        Parameter "num_results" is not supported. 
- |         
- |      Additional parameters: 
- |        offset 
- |          (optional) The offset into the list of documents. 
- |        limit 
- |          (optional) The number of documents to return 
- |          (default 10, max 1000). 
- |       
- |      Note on the "scope" parameter: 
- |        Only if scope=='user', the returned documents will have the 
- |        owner attribute set to this user object. Otherwise it will be 
- |        the scribd.api_user which will impact the ability to change 
- |        the document's properties. You may set the owner attributes 
- |        later if you have can determine the documents owner yourself. 
- |        Refer to the Document class for operations requiring a proper 
- |        owner object. 
- |   
- |  *get*(self, doc_id) 
- |      Returns a document with the specified id. 
- |       
- |      Parameters: 
- |        doc_id 
- |          (required) Identifier of the document to be returned. 
- |          The user has to be the owner of this document. 
- |   
- |  *upload*(self, file, **kwargs) 
- |      Uploads a new document and returns a document object. 
- |       
- |      Parameters: 
- |        Refer to the "Parameters" section of: 
- |        http://www.scribd.com/developers/api?method_name=docs.upload 
- |       
- |        Parameters "api_key", "api_sig", "session_key", "my_user_id" 
- |        are managed internally by the library. 
- |       
- |        Parameter "file" has a different meaning: 
- |         
- |        file 
- |          (required) File to upload. Either a file-alike object or an URL 
- |          string. If set to an URL, the file is uploaded from that URL. 
- |          If set to a file object, the file is loaded into memory using the 
- |          read() method and uploaded. The name of the file is obtained from 
- |          the "name" attribute. 
- |   
- |  *xall*(self, **kwargs) 
- |      Similar to all() method but returns a generator object 
- |      iterating over all user documents. 
- |       
- |      Parameters: 
- |        Refer to the "Parameters" section of: 
- |        http://www.scribd.com/developers/api?method_name=docs.getList 
- |       
- |        Parameters "api_key", "api_sig", "session_key", "my_user_id" 
- |        are managed internally by the library. 
- |       
- |        Parameter "limit" is not supported. 
- |         
- |      Additional parameters: 
- |        page_size 
- |          (optional) The number of documents acquired by a single API 
- |          call. The generator repeats the calls until all documents are 
- |          returned. 
- |       
- |      Note. If you're not interested in all documents (currently there 
- |      may be max. 1000 of them), just stop iterating the generator object. 
- |   
- |  *xfind*(self, query, **kwargs) 
- |      Similar to find() method but returns a generator object searching 
- |      for documents and iterating over them. 
- |       
- |      Parameters: 
- |        Refer to the "Parameters" section of: 
- |        http://www.scribd.com/developers/api?method_name=docs.search 
- |         
- |        Parameters "api_key", "api_sig", "session_key", "my_user_id" 
- |        are managed internally by the library. 
- |       
- |        Parameter "num_start" is not supported. 
- |        Parameter "num_results" is not supported. 
- |         
- |      Additional parameters: 
- |        offset 
- |          (optional) The offset into the list of documents. 
- |        page_size 
- |          (optional) The number of documents acquired by a single API 
- |          call. The calls are repeated until all documents are returned. 
- |       
- |      Note. If you're not interested in all documents (currently there 
- |      may be max. 1000 of them), just stop iterating the generator object. 
- |   
- |  ---------------------------------------------------------------------- 
- |  Methods inherited from [Resource]: 
- |   
- |  *get_attributes*(self) 
- |      Returns a dictionary with the resource attributes. </pre>
+    Provides an easy way to implement virtual users within the current 
+    Scribd API account. 
+     
+    This is useful if Scribd is used as a backend for a platform with its 
+    own user authentication system. 
+     
+    Virtual users are created just by instantiating this class passing the 
+    name of the virtual user to the constructor. This will most probably 
+    by the name used by your own authentication system. 
+     
+    Because this is a subclass of the User class, the virtual users provide 
+    the same set of operations (except get_autologin_url()) as normal users. 
+     
+    Resource attributes: 
+      None. 
+     
+    Method resolution order: 
+        [VirtualUser] 
+        [User] 
+        [Resource] 
+        object 
+     
+    Methods defined here: 
+     
+    *get_autologin_url*(self, next_path='') 
+        This method is not supported by virtual users. 
+     
+    ---------------------------------------------------------------------- 
+    Methods inherited from [User]: 
+     
+    *all*(self, **kwargs) 
+        Returns a list of all user documents. 
+         
+        Parameters: 
+          Refer to the "Parameters" section of: 
+          http://www.scribd.com/developers/api?method_name=docs.getList 
+           
+          Parameters "api_key", "api_sig", "session_key", "my_user_id" 
+          are managed internally by the library. 
+     
+    *find*(self, query, **kwargs) 
+        Searches for documents and returns a list of them. 
+         
+        Parameters: 
+          Refer to the "Parameters" section of: 
+          http://www.scribd.com/developers/api?method_name=docs.search 
+           
+          Parameters "api_key", "api_sig", "session_key", "my_user_id" 
+          are managed internally by the library. 
+         
+          Parameter "num_start" is not supported. 
+          Parameter "num_results" is not supported. 
+           
+        Additional parameters: 
+          offset 
+            (optional) The offset into the list of documents. 
+          limit 
+            (optional) The number of documents to return 
+            (default 10, max 1000). 
+         
+        Note on the "scope" parameter: 
+          Only if scope=='user', the returned documents will have the 
+          owner attribute set to this user object. Otherwise it will be 
+          the scribd.api_user which will impact the ability to change 
+          the document's properties. You may set the owner attributes 
+          later if you have can determine the documents owner yourself. 
+          Refer to the Document class for operations requiring a proper 
+          owner object. 
+     
+    *get*(self, doc_id) 
+        Returns a document with the specified id. 
+         
+        Parameters: 
+          doc_id 
+            (required) Identifier of the document to be returned. 
+            The user has to be the owner of this document. 
+     
+    *upload*(self, file, **kwargs) 
+        Uploads a new document and returns a document object. 
+         
+        Parameters: 
+          Refer to the "Parameters" section of: 
+          http://www.scribd.com/developers/api?method_name=docs.upload 
+         
+          Parameters "api_key", "api_sig", "session_key", "my_user_id" 
+          are managed internally by the library. 
+         
+          Parameter "file" has a different meaning: 
+           
+          file 
+            (required) File to upload. Either a file-alike object or an URL 
+            string. If set to an URL, the file is uploaded from that URL. 
+            If set to a file object, the file is loaded into memory using the 
+            read() method and uploaded. The name of the file is obtained from 
+            the "name" attribute. 
+     
+    *xall*(self, **kwargs) 
+        Similar to all() method but returns a generator object 
+        iterating over all user documents. 
+         
+        Parameters: 
+          Refer to the "Parameters" section of: 
+          http://www.scribd.com/developers/api?method_name=docs.getList 
+         
+          Parameters "api_key", "api_sig", "session_key", "my_user_id" 
+          are managed internally by the library. 
+         
+          Parameter "limit" is not supported. 
+           
+        Additional parameters: 
+          page_size 
+            (optional) The number of documents acquired by a single API 
+            call. The generator repeats the calls until all documents are 
+            returned. 
+         
+        Note. If you're not interested in all documents (currently there 
+        may be max. 1000 of them), just stop iterating the generator object. 
+     
+    *xfind*(self, query, **kwargs) 
+        Similar to find() method but returns a generator object searching 
+        for documents and iterating over them. 
+         
+        Parameters: 
+          Refer to the "Parameters" section of: 
+          http://www.scribd.com/developers/api?method_name=docs.search 
+           
+          Parameters "api_key", "api_sig", "session_key", "my_user_id" 
+          are managed internally by the library. 
+         
+          Parameter "num_start" is not supported. 
+          Parameter "num_results" is not supported. 
+           
+        Additional parameters: 
+          offset 
+            (optional) The offset into the list of documents. 
+          page_size 
+            (optional) The number of documents acquired by a single API 
+            call. The calls are repeated until all documents are returned. 
+         
+        Note. If you're not interested in all documents (currently there 
+        may be max. 1000 of them), just stop iterating the generator object. 
+     
+    ---------------------------------------------------------------------- 
+    Methods inherited from [Resource]: 
+     
+    *get_attributes*(self) 
+        Returns a dictionary with the resource attributes. </pre>

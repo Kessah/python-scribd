@@ -120,7 +120,7 @@
         scribd.api_user object. 
  
 *DATA* 
-    *api_user* = <scribd.User 'api_user' at 0x28d63f0> 
+    *api_user* = <scribd.[User] 'api_user'> 
  
 *VERSION* 
     0.9.6 

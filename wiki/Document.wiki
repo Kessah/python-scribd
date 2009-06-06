@@ -1,77 +1,77 @@
 <pre>
 class *Document*([Resource]) 
- |  Represents a Scribd document. 
- |   
- |  Use methods of the User objects to instantiate. 
- |   
- |  Documents have an owner attribute pointing to the owning user object. 
- |  This always has to be a valid object. If the true owner cannot be 
- |  established, this will be the scribd.api_user object which is the 
- |  default user associated with the current API account. 
- |   
- |  Resource attributes: 
- |    Refer to "Result explanation" section of: 
- |    http://www.scribd.com/developers/api?method_name=docs.search 
- |   
- |    This defines a limited subset of possible attributes. The full set 
- |    is accessible only to the document owners and may be obtained using 
- |    the load() method. 
- |   
- |  Method resolution order: 
- |      [Document] 
- |      [Resource] 
- |      object 
- |   
- |  Methods defined here: 
- |   
- |  *delete*(self) 
- |      Deletes the document from Scribd platform. 
- |   
- |  *get_conversion_status*(self) 
- |      Obtains and returns the document conversion status. 
- |       
- |      Returns: 
- |        Refer to the "Result explanation" section of: 
- |        http://www.scribd.com/developers/api?method_name=docs.getConversionStatus 
- |   
- |  *get_download_url*(self, doc_type='original') 
- |      Returns a link that can be used to download a static version of the 
- |      document. 
- |       
- |      Parameters: 
- |        Refer to the "Parameters" section of: 
- |        http://www.scribd.com/developers/api?method_name=docs.getDownloadUrl 
- |       
- |        Parameters "api_key", "api_sig", "session_key", "my_user_id", 
- |        "doc_id" are managed internally by the library. 
- |   
- |  *load*(self) 
- |      Retrieves the detailed meta-data for this document and updates 
- |      object's resource attributes. 
- |       
- |      Requires the document owner to be the user that uploaded this 
- |      document. 
- |   
- |  *replace*(self, file, **kwargs) 
- |      Uploads a new document file in place of the current one. All 
- |      attributes including doc_id and title remain intact. 
- |       
- |      Parameters: 
- |        Refer to the User.upload() method. 
- |         
- |        Parameter "rev_id" is managed internally by the library. 
- |   
- |  *save*(self) 
- |      Saves the changed object's resource attributes. 
- |       
- |      Has to be called after a resource attribute has been altered 
- |      to make the change permanent. 
- |       
- |      Requires the document owner to be the user that uploaded this 
- |      document. 
- |   
- |  ---------------------------------------------------------------------- 
- |  Methods inherited from [Resource]: 
- |   
- |  *get_attributes*(self) 
- |      Returns a dictionary with the resource attributes. </pre>
+    Represents a Scribd document. 
+     
+    Use methods of the User objects to instantiate. 
+     
+    Documents have an owner attribute pointing to the owning user object. 
+    This always has to be a valid object. If the true owner cannot be 
+    established, this will be the scribd.api_user object which is the 
+    default user associated with the current API account. 
+     
+    Resource attributes: 
+      Refer to "Result explanation" section of: 
+      http://www.scribd.com/developers/api?method_name=docs.search 
+     
+      This defines a limited subset of possible attributes. The full set 
+      is accessible only to the document owners and may be obtained using 
+      the load() method. 
+     
+    Method resolution order: 
+        [Document] 
+        [Resource] 
+        object 
+     
+    Methods defined here: 
+     
+    *delete*(self) 
+        Deletes the document from Scribd platform. 
+     
+    *get_conversion_status*(self) 
+        Obtains and returns the document conversion status. 
+         
+        Returns: 
+          Refer to the "Result explanation" section of: 
+          http://www.scribd.com/developers/api?method_name=docs.getConversionStatus 
+     
+    *get_download_url*(self, doc_type='original') 
+        Returns a link that can be used to download a static version of the 
+        document. 
+         
+        Parameters: 
+          Refer to the "Parameters" section of: 
+          http://www.scribd.com/developers/api?method_name=docs.getDownloadUrl 
+         
+          Parameters "api_key", "api_sig", "session_key", "my_user_id", 
+          "doc_id" are managed internally by the library. 
+     
+    *load*(self) 
+        Retrieves the detailed meta-data for this document and updates 
+        object's resource attributes. 
+         
+        Requires the document owner to be the user that uploaded this 
+        document. 
+     
+    *replace*(self, file, **kwargs) 
+        Uploads a new document file in place of the current one. All 
+        attributes including doc_id and title remain intact. 
+         
+        Parameters: 
+          Refer to the User.upload() method. 
+           
+          Parameter "rev_id" is managed internally by the library. 
+     
+    *save*(self) 
+        Saves the changed object's resource attributes. 
+         
+        Has to be called after a resource attribute has been altered 
+        to make the change permanent. 
+         
+        Requires the document owner to be the user that uploaded this 
+        document. 
+     
+    ---------------------------------------------------------------------- 
+    Methods inherited from [Resource]: 
+     
+    *get_attributes*(self) 
+        Returns a dictionary with the resource attributes. </pre>

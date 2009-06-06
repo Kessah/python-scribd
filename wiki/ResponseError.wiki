@@ -1,18 +1,18 @@
 <pre>
 class *ResponseError*(exceptions.Exception) 
- |  Exception raised if HOST responses with an error message. 
- |      
- |  Refer to the API documentation (Error codes section of various methods) 
- |  for explanation of the error codes. 
- |   
- |  Method resolution order: 
- |      [ResponseError] 
- |      exceptions.Exception 
- |      exceptions.BaseException 
- |      object 
- |   
- |  Data descriptors inherited from exceptions.BaseException: 
- |   
- |  *args* 
- |   
- |  *message* </pre>
+    Exception raised if HOST responses with an error message. 
+        
+    Refer to the API documentation (Error codes section of various methods) 
+    for explanation of the error codes. 
+     
+    Method resolution order: 
+        [ResponseError] 
+        exceptions.Exception 
+        exceptions.BaseException 
+        object 
+     
+    Data descriptors inherited from exceptions.BaseException: 
+     
+    *args* 
+     
+    *message* </pre>

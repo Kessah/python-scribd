@@ -1,86 +1,86 @@
 <pre>
 class *NullHandler*(logging.Handler) 
- |  Empty logging handler used to prevent a warning if the application 
- |  doesn't use the logging module. 
- |   
- |  Method resolution order: 
- |      [NullHandler] 
- |      logging.Handler 
- |      logging.Filterer 
- |   
- |  Methods defined here: 
- |   
- |  *emit*(self, record) 
- |   
- |  ---------------------------------------------------------------------- 
- |  Methods inherited from logging.Handler: 
- |   
- |  *acquire*(self) 
- |      Acquire the I/O thread lock. 
- |   
- |  *close*(self) 
- |      Tidy up any resources used by the handler. 
- |       
- |      This version does removes the handler from an internal list 
- |      of handlers which is closed when shutdown() is called. Subclasses 
- |      should ensure that this gets called from overridden close() 
- |      methods. 
- |   
- |  *createLock*(self) 
- |      Acquire a thread lock for serializing access to the underlying I/O. 
- |   
- |  *flush*(self) 
- |      Ensure all logging output has been flushed. 
- |       
- |      This version does nothing and is intended to be implemented by 
- |      subclasses. 
- |   
- |  *format*(self, record) 
- |      Format the specified record. 
- |       
- |      If a formatter is set, use it. Otherwise, use the default formatter 
- |      for the module. 
- |   
- |  *handle*(self, record) 
- |      Conditionally emit the specified logging record. 
- |       
- |      Emission depends on filters which may have been added to the handler. 
- |      Wrap the actual emission of the record with acquisition/release of 
- |      the I/O thread lock. Returns whether the filter passed the record for 
- |      emission. 
- |   
- |  *handleError*(self, record) 
- |      Handle errors which occur during an emit() call. 
- |       
- |      This method should be called from handlers when an exception is 
- |      encountered during an emit() call. If raiseExceptions is false, 
- |      exceptions get silently ignored. This is what is mostly wanted 
- |      for a logging system - most users will not care about errors in 
- |      the logging system, they are more interested in application errors. 
- |      You could, however, replace this with a custom handler if you wish. 
- |      The record which was being processed is passed in to this method. 
- |   
- |  *release*(self) 
- |      Release the I/O thread lock. 
- |   
- |  *setFormatter*(self, fmt) 
- |      Set the formatter for this handler. 
- |   
- |  *setLevel*(self, level) 
- |      Set the logging level of this handler. 
- |   
- |  ---------------------------------------------------------------------- 
- |  Methods inherited from logging.Filterer: 
- |   
- |  *addFilter*(self, filter) 
- |      Add the specified filter to this handler. 
- |   
- |  *filter*(self, record) 
- |      Determine if a record is loggable by consulting all the filters. 
- |       
- |      The default is to allow the record to be logged; any filter can veto 
- |      this and the record is then dropped. Returns a zero value if a record 
- |      is to be dropped, else non-zero. 
- |   
- |  *removeFilter*(self, filter) 
- |      Remove the specified filter from this handler. </pre>
+    Empty logging handler used to prevent a warning if the application 
+    doesn't use the logging module. 
+     
+    Method resolution order: 
+        [NullHandler] 
+        logging.Handler 
+        logging.Filterer 
+     
+    Methods defined here: 
+     
+    *emit*(self, record) 
+     
+    ---------------------------------------------------------------------- 
+    Methods inherited from logging.Handler: 
+     
+    *acquire*(self) 
+        Acquire the I/O thread lock. 
+     
+    *close*(self) 
+        Tidy up any resources used by the handler. 
+         
+        This version does removes the handler from an internal list 
+        of handlers which is closed when shutdown() is called. Subclasses 
+        should ensure that this gets called from overridden close() 
+        methods. 
+     
+    *createLock*(self) 
+        Acquire a thread lock for serializing access to the underlying I/O. 
+     
+    *flush*(self) 
+        Ensure all logging output has been flushed. 
+         
+        This version does nothing and is intended to be implemented by 
+        subclasses. 
+     
+    *format*(self, record) 
+        Format the specified record. 
+         
+        If a formatter is set, use it. Otherwise, use the default formatter 
+        for the module. 
+     
+    *handle*(self, record) 
+        Conditionally emit the specified logging record. 
+         
+        Emission depends on filters which may have been added to the handler. 
+        Wrap the actual emission of the record with acquisition/release of 
+        the I/O thread lock. Returns whether the filter passed the record for 
+        emission. 
+     
+    *handleError*(self, record) 
+        Handle errors which occur during an emit() call. 
+         
+        This method should be called from handlers when an exception is 
+        encountered during an emit() call. If raiseExceptions is false, 
+        exceptions get silently ignored. This is what is mostly wanted 
+        for a logging system - most users will not care about errors in 
+        the logging system, they are more interested in application errors. 
+        You could, however, replace this with a custom handler if you wish. 
+        The record which was being processed is passed in to this method. 
+     
+    *release*(self) 
+        Release the I/O thread lock. 
+     
+    *setFormatter*(self, fmt) 
+        Set the formatter for this handler. 
+     
+    *setLevel*(self, level) 
+        Set the logging level of this handler. 
+     
+    ---------------------------------------------------------------------- 
+    Methods inherited from logging.Filterer: 
+     
+    *addFilter*(self, filter) 
+        Add the specified filter to this handler. 
+     
+    *filter*(self, record) 
+        Determine if a record is loggable by consulting all the filters. 
+         
+        The default is to allow the record to be logged; any filter can veto 
+        this and the record is then dropped. Returns a zero value if a record 
+        is to be dropped, else non-zero. 
+     
+    *removeFilter*(self, filter) 
+        Remove the specified filter from this handler. </pre>

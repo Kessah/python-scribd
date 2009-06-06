@@ -1,15 +1,15 @@
 <pre>
 class *Resource*(object) 
- |  Base class for remote objects that the Scribd API allows 
- |  to interact with. This class is never instantiated, only 
- |  subclassed. 
- |   
- |  Every object features a set of resource attributes that are 
- |  stored and managed by the Scribd platform. They are accessed 
- |  and used like any other Python object attributes but are 
- |  stored in a separate container. 
- |   
- |  Methods defined here: 
- |   
- |  *get_attributes*(self) 
- |      Returns a dictionary with the resource attributes. </pre>
+    Base class for remote objects that the Scribd API allows 
+    to interact with. This class is never instantiated, only 
+    subclassed. 
+     
+    Every object features a set of resource attributes that are 
+    stored and managed by the Scribd platform. They are accessed 
+    and used like any other Python object attributes but are 
+    stored in a separate container. 
+     
+    Methods defined here: 
+     
+    *get_attributes*(self) 
+        Returns a dictionary with the resource attributes. </pre>
