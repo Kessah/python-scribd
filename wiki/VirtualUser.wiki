@@ -11,7 +11,7 @@ class *VirtualUser*([User])
     by the name used by your own authentication system. 
      
     Because this is a subclass of the User class, the virtual users provide 
-    the same set of operations (except get`_`autologin`_`url()) as normal users. 
+    the same set of operations (except get_autologin_url()) as normal users. 
      
     Resource attributes: 
       None. 
@@ -24,7 +24,7 @@ class *VirtualUser*([User])
      
     Methods defined here: 
      
-    *get`_`autologin`_`url*(self, next`_`path='') 
+    *get_autologin_url*(self, next_path='') 
         This method is not supported by virtual users. 
      
     ---------------------------------------------------------------------- 
@@ -35,9 +35,9 @@ class *VirtualUser*([User])
          
         Parameters: 
           Refer to the "Parameters" section of: 
-          http://www.scribd.com/developers/api?method`_`name=docs.getList 
+          http://www.scribd.com/developers/api?method_name=docs.getList 
            
-          Parameters "api`_`key", "api`_`sig", "session`_`key", "my`_`user`_`id" 
+          Parameters "api_key", "api_sig", "session_key", "my_user_id" 
           are managed internally by the library. 
      
     *find*(self, query, `*``*`kwargs) 
@@ -45,13 +45,13 @@ class *VirtualUser*([User])
          
         Parameters: 
           Refer to the "Parameters" section of: 
-          http://www.scribd.com/developers/api?method`_`name=docs.search 
+          http://www.scribd.com/developers/api?method_name=docs.search 
            
-          Parameters "api`_`key", "api`_`sig", "session`_`key", "my`_`user`_`id" 
+          Parameters "api_key", "api_sig", "session_key", "my_user_id" 
           are managed internally by the library. 
          
-          Parameter "num`_`start" is not supported. 
-          Parameter "num`_`results" is not supported. 
+          Parameter "num_start" is not supported. 
+          Parameter "num_results" is not supported. 
            
         Additional parameters: 
           offset 
@@ -63,17 +63,17 @@ class *VirtualUser*([User])
         Note on the "scope" parameter: 
           Only if scope=='user', the returned documents will have the 
           owner attribute set to this user object. Otherwise it will be 
-          the scribd.api`_`user which will impact the ability to change 
+          the scribd.api_user which will impact the ability to change 
           the document's properties. You may set the owner attributes 
           later if you have can determine the documents owner yourself. 
           Refer to the Document class for operations requiring a proper 
           owner object. 
      
-    *get*(self, doc`_`id) 
+    *get*(self, doc_id) 
         Returns a document with the specified id. 
          
         Parameters: 
-          doc`_`id 
+          doc_id 
             (required) Identifier of the document to be returned. 
             The user has to be the owner of this document. 
      
@@ -82,9 +82,9 @@ class *VirtualUser*([User])
          
         Parameters: 
           Refer to the "Parameters" section of: 
-          http://www.scribd.com/developers/api?method`_`name=docs.upload 
+          http://www.scribd.com/developers/api?method_name=docs.upload 
          
-          Parameters "api`_`key", "api`_`sig", "session`_`key", "my`_`user`_`id" 
+          Parameters "api_key", "api_sig", "session_key", "my_user_id" 
           are managed internally by the library. 
          
           Parameter "file" has a different meaning: 
@@ -102,15 +102,15 @@ class *VirtualUser*([User])
          
         Parameters: 
           Refer to the "Parameters" section of: 
-          http://www.scribd.com/developers/api?method`_`name=docs.getList 
+          http://www.scribd.com/developers/api?method_name=docs.getList 
          
-          Parameters "api`_`key", "api`_`sig", "session`_`key", "my`_`user`_`id" 
+          Parameters "api_key", "api_sig", "session_key", "my_user_id" 
           are managed internally by the library. 
          
           Parameter "limit" is not supported. 
            
         Additional parameters: 
-          page`_`size 
+          page_size 
             (optional) The number of documents acquired by a single API 
             call. The generator repeats the calls until all documents are 
             returned. 
@@ -124,18 +124,18 @@ class *VirtualUser*([User])
          
         Parameters: 
           Refer to the "Parameters" section of: 
-          http://www.scribd.com/developers/api?method`_`name=docs.search 
+          http://www.scribd.com/developers/api?method_name=docs.search 
            
-          Parameters "api`_`key", "api`_`sig", "session`_`key", "my`_`user`_`id" 
+          Parameters "api_key", "api_sig", "session_key", "my_user_id" 
           are managed internally by the library. 
          
-          Parameter "num`_`start" is not supported. 
-          Parameter "num`_`results" is not supported. 
+          Parameter "num_start" is not supported. 
+          Parameter "num_results" is not supported. 
            
         Additional parameters: 
           offset 
             (optional) The offset into the list of documents. 
-          page`_`size 
+          page_size 
             (optional) The number of documents acquired by a single API 
             call. The calls are repeated until all documents are returned. 
          
@@ -145,5 +145,5 @@ class *VirtualUser*([User])
     ---------------------------------------------------------------------- 
     Methods inherited from [Resource]: 
      
-    *get`_`attributes*(self) 
+    *get_attributes*(self) 
         Returns a dictionary with the resource attributes. </pre>

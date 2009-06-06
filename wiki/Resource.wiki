@@ -11,5 +11,5 @@ class *Resource*(object)
      
     Methods defined here: 
      
-    *get`_`attributes*(self) 
+    *get_attributes*(self) 
         Returns a dictionary with the resource attributes. </pre>

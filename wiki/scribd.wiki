@@ -60,7 +60,7 @@
         This function searches for public documents by default. 
          
         The returned document have the owner attribute set to the 
-        scribd.api`_`user object. 
+        scribd.api_user object. 
      
     *login*(username, password) 
         Logs the given Scribd user in and returns the corresponding User object. 
@@ -96,13 +96,13 @@
           Instead of: 
          
               for doc in docs: 
-                  doc.some`_`attribute`_`1 = some`_`value`_`1 
-                  doc.some`_`attribute`_`2 = some`_`value`_`2 
+                  doc.some_attribute_1 = some_value_1 
+                  doc.some_attribute_2 = some_value_2 
                   doc.save() 
           use: 
          
-              update(docs, some`_`attribute`_`1=some`_`value`_`1, 
-                           some`_`attribute`_`2=some`_`value`_`2) 
+              update(docs, some_attribute_1=some_value_1, 
+                           some_attribute_2=some_value_2) 
              
         All documents must have the same owner. The operation is faster because 
         it requires only one API call. 
@@ -117,10 +117,10 @@
         This function searches for public documents by default. 
          
         The returned document have the owner attribute set to the 
-        scribd.api`_`user object. 
+        scribd.api_user object. 
  
 *DATA* 
-    *api`_`user* = <scribd.[User] 'api`_`user'> 
+    *api_user* = <scribd.[User] 'api_user'> 
  
 *VERSION* 
     0.9.6 
