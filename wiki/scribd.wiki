@@ -57,6 +57,9 @@
         Parameters: 
           Refer to User.find() method. 
            
+        Returns: 
+          A list of [Document] objects. 
+         
         This function searches for public documents by default. 
          
         The returned document have the owner attribute set to the 
@@ -70,6 +73,9 @@
             Name of the user. 
           password 
             The user's password. 
+         
+        Returns: 
+          A [User] object. 
      
     *signup*(username, password, email, name=None) 
         Creates a new Scribd user and returns the corresponding User object. 
@@ -82,13 +88,16 @@
             Password of the new user. 
           email 
             E-mail address of the user. 
+         
+        Returns: 
+          A [User] object. 
      
     *update*(docs, `*``*`fields) 
         A faster way to set the same attribute of many documents. 
          
         Parameters: 
           docs 
-            A sequence of document objects. 
+            A sequence of [Document] objects. 
           keyword arguments 
             Document attributes to set. 
          
@@ -114,6 +123,9 @@
         Parameters: 
           Refer to User.xfind() method. 
            
+        Returns: 
+          A generator object yielding [Document] objects. 
+         
         This function searches for public documents by default. 
          
         The returned document have the owner attribute set to the 

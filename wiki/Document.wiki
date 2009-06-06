@@ -44,6 +44,9 @@ class *Document*([Resource])
          
           Parameters "api_key", "api_sig", "session_key", "my_user_id", 
           "doc_id" are managed internally by the library. 
+           
+        Returns: 
+          An URL (string). 
      
     *load*(self) 
         Retrieves the detailed meta-data for this document and updates 

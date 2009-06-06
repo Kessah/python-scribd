@@ -24,6 +24,9 @@ class *User*([Resource])
            
           Parameters "api_key", "api_sig", "session_key", "my_user_id" 
           are managed internally by the library. 
+           
+        Returns: 
+          A list of [Document] objects. 
      
     *find*(self, query, `*``*`kwargs) 
         Searches for documents and returns a list of them. 
@@ -53,6 +56,9 @@ class *User*([Resource])
           later if you have can determine the documents owner yourself. 
           Refer to the Document class for operations requiring a proper 
           owner object. 
+         
+        Returns: 
+          A list of [Document] objects. 
      
     *get*(self, doc_id) 
         Returns a document with the specified id. 
@@ -61,6 +67,9 @@ class *User*([Resource])
           doc_id 
             (required) Identifier of the document to be returned. 
             The user has to be the owner of this document. 
+         
+        Returns: 
+          A [Document] objects. 
      
     *get_autologin_url*(self, next_url='') 
         Creates and returns an URL that logs the user in when visited and 
@@ -72,6 +81,9 @@ class *User*([Resource])
          
           Parameters "api_key", "api_sig", "session_key", "my_user_id" 
           are managed internally by the library. 
+         
+        Returns: 
+          An URL (string). 
      
     *upload*(self, file, `*``*`kwargs) 
         Uploads a new document and returns a document object. 
@@ -91,6 +103,9 @@ class *User*([Resource])
             If set to a file object, the file is loaded into memory using the 
             read() method and uploaded. The name of the file is obtained from 
             the "name" attribute. 
+         
+        Returns: 
+          A [Document] objects. 
      
     *xall*(self, `*``*`kwargs) 
         Similar to all() method but returns a generator object 
@@ -110,6 +125,9 @@ class *User*([Resource])
             (optional) The number of documents acquired by a single API 
             call. The generator repeats the calls until all documents are 
             returned. 
+         
+        Returns: 
+          A generator object yielding [Document] objects. 
          
         Note. If you're not interested in all documents (currently there 
         may be max. 1000 of them), just stop iterating the generator object. 
@@ -134,6 +152,9 @@ class *User*([Resource])
           page_size 
             (optional) The number of documents acquired by a single API 
             call. The calls are repeated until all documents are returned. 
+         
+        Returns: 
+          A generator object yielding [Document] objects. 
          
         Note. If you're not interested in all documents (currently there 
         may be max. 1000 of them), just stop iterating the generator object. 
