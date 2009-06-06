@@ -141,7 +141,7 @@ Now we're going to list all documents already uploaded.
 >>> document = all_documents[0]
 }}}
 
-Assuming that we're using a fresh user account and we've uploaded the example document in one of the previous steps, the `all()` call will return a list with a single [Document] object which we assign to the `document` variable.
+Assuming that we're using a fresh user account, the `all()` call will return a list with a single [Document] object which we've uploaded before. We assign this object to the `document` variable.
 
 To save bandwidth during the `all()` call, not all resource attributes of the document objects are transmitted and set. We have to explicitly load them:
 
