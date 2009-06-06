@@ -61,12 +61,22 @@ At this point you can start using the library freely, create documents, search f
 
 Every Scribd user is represented in the library by a [User] object. By passing your *API key* to the library, you've effectively let it log into your Scribd user account. The corresponding [User] object can be found in the
 
-  `scribd.api_user`
+{{{
+scribd.api_user
+}}}
 
-variable. You can use it now to access your documents or upload new ones. Refer to the [User] object documentation.
+variable. You can use it now to access your documents or upload new ones. Refer to the [User] object documentation for more information.
 
 The API also lets you log as a different user while still using your API account to access the Scribd API. This is done using the `login()` function from the [scribd] module. The function returns the corresponding [User] object.
+
+{{{
+jsmith_user = scribd.login('jsmith', 'password')
+}}}
 
 You can also log yourself in. This may seem redundant but overcomes one limitation of the `api_user` object. Unlike other [User] objects, it doesn't have attributes like `name` or `username`. This may be important to you or not, depending on what you want to accomplish.
 
 Finally your can sign up for a new user account using the `signup()` function from the [scribd] module.
+
+{{{
+johndoe_user = scribd.signup('johndoe', 'password', 'johndow@example.com')
+}}}
