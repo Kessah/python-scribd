@@ -3,7 +3,7 @@
     scribd - Scribd client library. 
  
 *FILE* 
-    __init__.py 
+    `_``_`init`_``_`.py 
  
 *DESCRIPTION* 
     This is a simple yet powerful library for the Scribd API, allowing to write 
@@ -60,7 +60,7 @@
         This function searches for public documents by default. 
          
         The returned document have the owner attribute set to the 
-        scribd.api_user object. 
+        scribd.api`_`user object. 
      
     *login*(username, password) 
         Logs the given Scribd user in and returns the corresponding User object. 
@@ -96,13 +96,13 @@
           Instead of: 
          
               for doc in docs: 
-                  doc.some_attribute_1 = some_value_1 
-                  doc.some_attribute_2 = some_value_2 
+                  doc.some`_`attribute`_`1 = some`_`value`_`1 
+                  doc.some`_`attribute`_`2 = some`_`value`_`2 
                   doc.save() 
           use: 
          
-              update(docs, some_attribute_1=some_value_1, 
-                           some_attribute_2=some_value_2) 
+              update(docs, some`_`attribute`_`1=some`_`value`_`1, 
+                           some`_`attribute`_`2=some`_`value`_`2) 
              
         All documents must have the same owner. The operation is faster because 
         it requires only one API call. 
@@ -117,10 +117,10 @@
         This function searches for public documents by default. 
          
         The returned document have the owner attribute set to the 
-        scribd.api_user object. 
+        scribd.api`_`user object. 
  
 *DATA* 
-    *api_user* = <scribd.[User] 'api_user'> 
+    *api`_`user* = <scribd.[User] 'api`_`user'> 
  
 *VERSION* 
     0.9.6 
