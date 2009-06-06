@@ -1,0 +1,127 @@
+<pre>
+*NAME* 
+    scribd - Scribd client library. 
+ 
+*FILE* 
+    c:\python26\projects\scribd\trunk\scribd\__init__.py 
+ 
+*DESCRIPTION* 
+    This is a simple yet powerful library for the Scribd API, allowing to write 
+    Python applications or websites that upload, convert, display, search, and 
+    control documents in many formats using the Scribd platform. 
+     
+    For more information on the Scribd platform, visit: 
+    http://www.scribd.com/about 
+     
+    The underlying RESTful API documentation can be found at: 
+    http://www.scribd.com/developers 
+     
+    Copyright (c) 2009, Arkadiusz Wahlig <arkadiusz.wahlig@gmail.com> 
+     
+    Distributed under the new BSD License, see the 
+    accompanying LICENSE file for more information. 
+ 
+*PACKAGE CONTENTS* 
+    multipart 
+    xmlparse 
+ 
+*CLASSES* 
+    object 
+        [Resource] 
+            [Document] 
+            [User] 
+                [VirtualUser] 
+    exceptions.Exception(exceptions.BaseException) 
+        [MalformedResponseError] 
+        [NotReadyError] 
+        [ResponseError] 
+ 
+*FUNCTIONS* 
+    *config*(key, secret) 
+        Configures the API key and secret. These values have to be 
+        configured before any operation involving API calls can be performed. 
+         
+        Parameters: 
+          key 
+            The API key assigned to your Scribd user account. 
+          secret 
+            The API secret assigned to your Scribd user account. 
+         
+        API key and secret values are obtained by signing up for a Scribd 
+        account and registering it as an API account. The website will in 
+        turn provide you with both values. 
+     
+    *find*(query, **kwargs) 
+        Searches for public documents and returns a list of them. 
+         
+        Parameters: 
+          Refer to User.find() method. 
+           
+        This function searches for public documents by default. 
+         
+        The returned document have the owner attribute set to the 
+        scribd.api_user object. 
+     
+    *login*(username, password) 
+        Logs the given Scribd user in and returns the corresponding User object. 
+         
+        Parameters: 
+          username 
+            Name of the user. 
+          password 
+            The user's password. 
+     
+    *signup*(username, password, email, name=None) 
+        Creates a new Scribd user and returns the corresponding User object. 
+        The user is already logged in. 
+         
+        Parameters: 
+          username 
+            Name of the new user. 
+          password 
+            Password of the new user. 
+          email 
+            E-mail address of the user. 
+     
+    *update*(docs, **fields) 
+        A faster way to set the same attribute of many documents. 
+         
+        Parameters: 
+          docs 
+            A sequence of document objects. 
+          keyword arguments 
+            Document attributes to set. 
+         
+        Example: 
+          Instead of: 
+         
+              for doc in docs: 
+                  doc.some_attribute_1 = some_value_1 
+                  doc.some_attribute_2 = some_value_2 
+                  doc.save() 
+          use: 
+         
+              update(docs, some_attribute_1=some_value_1, 
+                           some_attribute_2=some_value_2) 
+             
+        All documents must have the same owner. The operation is faster because 
+        it requires only one API call. 
+     
+    *xfind*(query, **kwargs) 
+        Similar to find() function but returns a generator object 
+        searching for documents and iterating over them. 
+         
+        Parameters: 
+          Refer to User.xfind() method. 
+           
+        This function searches for public documents by default. 
+         
+        The returned document have the owner attribute set to the 
+        scribd.api_user object. 
+ 
+*DATA* 
+    *api_user* = <scribd.User 'api_user' at 0x28d63f0> 
+ 
+*VERSION* 
+    0.9.6 
+ </pre>
