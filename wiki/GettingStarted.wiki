@@ -1,5 +1,3 @@
-#summary How to start developing using python-scribd.
-
 == Terminology ==
 
 Before we get started, lets clear out some terms:
@@ -36,7 +34,7 @@ The page also gives you an *API secret* key. This is used to digitally sign all 
 
 == Initialization ==
 
-The preferred way to import the library is:
+The preferred way to import the [scribd] library is:
 
 {{{
 import scribd
@@ -50,15 +48,25 @@ As said before, the library needs the *API key* and *API secret* before it can b
 scribd.config('your_api_key', 'your_api_secret')
 }}}
 
-This function sets the _scribd_ module global variables, alternatively you can do it directly:
+This function sets the [scribd] module global variables, alternatively you can do it directly:
 
 {{{
 scribd.api_key = 'your_api_key'
 scribd.api_secret = 'your_api_secret'
 }}}
 
-== What next? ==
-
 At this point you can start using the library freely, create documents, search for them, change their attributes, etc.
 
-Refer to the [Reference] page for more information on what can be accomplished.
+== User hierarchy ==
+
+Every Scribd user is represented in the library by a [User] object. By passing your *API key* to the library, you've effectively let it log into your Scribd user account. The corresponding [User] object can be found in the
+
+  `scribd.api_user`
+
+variable. You can use it now to access your documents or upload new ones. Refer to the [User] object documentation.
+
+The API also lets you log as a different user while still using your API account to access the Scribd API. This is done using the `login()` function from the [scribd] module. The function returns the corresponding [User] object.
+
+You can also log yourself in. This may seem redundant but overcomes one limitation of the `api_user` object. Unlike other [User] objects, it doesn't have attributes like `name` or `username`. This may be important to you or not, depending on what you want to accomplish.
+
+Finally your can sign up for a new user account using the `signup()` function from the [scribd] module.
