@@ -27,3 +27,13 @@ import scribd
   A scribd.[User] object representing the default Scribd user that registered the API account. Note that it doesn't feature the standard user object attributes like `name` or `username`. You will have to log the user in using [#login()] function to get them.
 
 ==== config() ====
+
+==== login() ====
+
+==== signup() ====
+
+==== update() ====
+
+==== find() ====
+
+==== xfind() ====
