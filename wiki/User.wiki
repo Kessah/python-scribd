@@ -15,7 +15,7 @@ class *User*([Resource])
      
     Methods defined here: 
      
-    *all*(self, **kwargs) 
+    *all*(self, `*``*`kwargs) 
         Returns a list of all user documents. 
          
         Parameters: 
@@ -25,7 +25,7 @@ class *User*([Resource])
           Parameters "api`_`key", "api`_`sig", "session`_`key", "my`_`user`_`id" 
           are managed internally by the library. 
      
-    *find*(self, query, **kwargs) 
+    *find*(self, query, `*``*`kwargs) 
         Searches for documents and returns a list of them. 
          
         Parameters: 
@@ -73,7 +73,7 @@ class *User*([Resource])
           Parameters "api`_`key", "api`_`sig", "session`_`key", "my`_`user`_`id" 
           are managed internally by the library. 
      
-    *upload*(self, file, **kwargs) 
+    *upload*(self, file, `*``*`kwargs) 
         Uploads a new document and returns a document object. 
          
         Parameters: 
@@ -92,7 +92,7 @@ class *User*([Resource])
             read() method and uploaded. The name of the file is obtained from 
             the "name" attribute. 
      
-    *xall*(self, **kwargs) 
+    *xall*(self, `*``*`kwargs) 
         Similar to all() method but returns a generator object 
         iterating over all user documents. 
          
@@ -114,7 +114,7 @@ class *User*([Resource])
         Note. If you're not interested in all documents (currently there 
         may be max. 1000 of them), just stop iterating the generator object. 
      
-    *xfind*(self, query, **kwargs) 
+    *xfind*(self, query, `*``*`kwargs) 
         Similar to find() method but returns a generator object searching 
         for documents and iterating over them. 
          

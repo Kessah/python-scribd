@@ -30,7 +30,7 @@ class *VirtualUser*([User])
     ---------------------------------------------------------------------- 
     Methods inherited from [User]: 
      
-    *all*(self, **kwargs) 
+    *all*(self, `*``*`kwargs) 
         Returns a list of all user documents. 
          
         Parameters: 
@@ -40,7 +40,7 @@ class *VirtualUser*([User])
           Parameters "api`_`key", "api`_`sig", "session`_`key", "my`_`user`_`id" 
           are managed internally by the library. 
      
-    *find*(self, query, **kwargs) 
+    *find*(self, query, `*``*`kwargs) 
         Searches for documents and returns a list of them. 
          
         Parameters: 
@@ -77,7 +77,7 @@ class *VirtualUser*([User])
             (required) Identifier of the document to be returned. 
             The user has to be the owner of this document. 
      
-    *upload*(self, file, **kwargs) 
+    *upload*(self, file, `*``*`kwargs) 
         Uploads a new document and returns a document object. 
          
         Parameters: 
@@ -96,7 +96,7 @@ class *VirtualUser*([User])
             read() method and uploaded. The name of the file is obtained from 
             the "name" attribute. 
      
-    *xall*(self, **kwargs) 
+    *xall*(self, `*``*`kwargs) 
         Similar to all() method but returns a generator object 
         iterating over all user documents. 
          
@@ -118,7 +118,7 @@ class *VirtualUser*([User])
         Note. If you're not interested in all documents (currently there 
         may be max. 1000 of them), just stop iterating the generator object. 
      
-    *xfind*(self, query, **kwargs) 
+    *xfind*(self, query, `*``*`kwargs) 
         Similar to find() method but returns a generator object searching 
         for documents and iterating over them. 
          

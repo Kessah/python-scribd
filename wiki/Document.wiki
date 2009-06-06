@@ -52,7 +52,7 @@ class *Document*([Resource])
         Requires the document owner to be the user that uploaded this 
         document. 
      
-    *replace*(self, file, **kwargs) 
+    *replace*(self, file, `*``*`kwargs) 
         Uploads a new document file in place of the current one. All 
         attributes including doc`_`id and title remain intact. 
          

@@ -51,7 +51,7 @@
         account and registering it as an API account. The website will in 
         turn provide you with both values. 
      
-    *find*(query, **kwargs) 
+    *find*(query, `*``*`kwargs) 
         Searches for public documents and returns a list of them. 
          
         Parameters: 
@@ -83,7 +83,7 @@
           email 
             E-mail address of the user. 
      
-    *update*(docs, **fields) 
+    *update*(docs, `*``*`fields) 
         A faster way to set the same attribute of many documents. 
          
         Parameters: 
@@ -107,7 +107,7 @@
         All documents must have the same owner. The operation is faster because 
         it requires only one API call. 
      
-    *xfind*(query, **kwargs) 
+    *xfind*(query, `*``*`kwargs) 
         Similar to find() function but returns a generator object 
         searching for documents and iterating over them. 
          
