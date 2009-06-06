@@ -1,13 +1,9 @@
 #summary How to start developing using python-scribd.
 
-= Introduction =
+== Terminology ==
 
-Add your content here.
+Before we get started, lets clear out some terms:
 
+  * python-scribd
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+    This is the full name of the library. It is used if referring to it in a broader context. An example is this Google Code project's name or the name of the download files containing the library.
