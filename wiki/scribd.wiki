@@ -3,7 +3,7 @@
     scribd - Scribd client library. 
  
 *FILE* 
-    c:\python26\projects\scribd\trunk\scribd\__init__.py 
+    __init__.py 
  
 *DESCRIPTION* 
     This is a simple yet powerful library for the Scribd API, allowing to write 
