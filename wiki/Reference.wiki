@@ -24,16 +24,30 @@ import scribd
 
 ==== api_user ====
 
-  A scribd.[User] object representing the default Scribd user that registered the API account. Note that it doesn't feature the standard user object attributes like `name` or `username`. You will have to log the user in using [#login()] function to get them.
+  A scribd.[User] object representing the default Scribd user that registered the API account. Note that it doesn't feature the standard user object attributes like `name` or `username`. You will have to log the user in using [#login() login()] function to get them.
 
 ==== config() ====
 
+  `config(key, secret)`
+
+  Configures both the [#api_key api_key] and [#spi_secret api_secret] variables in one step.
+
 ==== login() ====
+
+  `login(username, password)`
 
 ==== signup() ====
 
+  `signup(username, password, email)`
+
 ==== update() ====
+
+  `update(docs, **kwargs)`
 
 ==== find() ====
 
+  `find(query, **kwargs)`
+
 ==== xfind() ====
+
+  `xfind(query, **kwargs)`
