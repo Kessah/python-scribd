@@ -72,6 +72,9 @@ class *Document*([Resource])
         Returns: 
             An URL (string). 
      
+    *get_scribd_url*(self) 
+        Returns a link to the document's page on scribd.com. 
+     
     *load*(self) 
         Retrieves the detailed meta-data for this document and updates 
         object's resource attributes. 
@@ -97,6 +100,11 @@ class *Document*([Resource])
          
         Has to be called after a resource attribute has been altered 
         to make the change permanent. 
+         
+        Refer to the "Parameters" section of: 
+        http://www.scribd.com/developers/api?method_name=docs.changeSettings 
+        for the names and descriptions of the resource attributes 
+        that are saved by this call. 
          
         Requires the document owner to be the user that uploaded this 
         document. 
