@@ -7,3 +7,58 @@ Before we get started, lets clear out some terms:
   * python-scribd
 
     This is the full name of the library. It is used if referring to it in a broader context. An example is this Google Code project's name or the name of the download files containing the library.
+
+  * scribd
+
+    This is the name of the Python package provided by the library. It is the name used while importing and referring to the library from within Python scripts. Always written using lowercase letters only.
+
+  * Scribd
+
+    This is the name of the actual documents hosting service, i.e. the scribd.com website. Always written with capital letter "S".
+
+== Installation ==
+
+The library is distributed with the standard Python _distutils_ script (setup.py). After downloading and decompressing, open a system administrator terminal and issue the following command to perform the installation:
+
+{{{
+python setup.py install
+}}}
+
+== Getting started ==
+
+The first thing to do before writing any code is to go to http://scribd.com and sign up for a user account.
+
+The user account has to be enabled for API access. This is done using the form on http://www.scribd.com/developers/signup_api. You'll have to provide some basic description of your project. No approval is needed, the registration is completed immediately.
+
+The API account is identified by an *API key*. This key has to be passed to the library before using it. You can get it from your profile page on scribd.com.
+
+The page also gives you an *API secret* key. This is used to digitally sign all requests sent to the API server to prevent the middle-man attacks. The signing is optional for the API but the library enforces it so you'll this secret key too.
+
+== Initialization ==
+
+The preferred way to import the library is:
+
+{{{
+import scribd
+}}}
+
+other import forms are also supported but discouraged.
+
+As said before, the library needs the *API key* and *API secret* before it can be used. The preferred way to pass them to it is:
+
+{{{
+scribd.config('your_api_key', 'your_api_secret')
+}}}
+
+This function sets the _scribd_ module global variables, alternatively you can do it directly:
+
+{{{
+scribd.api_key = 'your_api_key'
+scribd.api_secret = 'your_api_secret'
+}}}
+
+== What next? ==
+
+At this point you can start using the library freely, create documents, search for them, change their attributes, etc.
+
+Refer to the [Reference] page for more information on what can be accomplished.
