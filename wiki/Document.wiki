@@ -20,26 +20,26 @@ class *Document*([Resource])
         attributes. 
      
     Resource attributes: 
-      The initial set of the attributes depend on how this object 
-      was obtained. 
+        The initial set of the attributes depend on how this object 
+        was obtained. 
      
-      Refer to "Result explanation" section of: 
-      http://www.scribd.com/developers/api?method_name=docs.getList 
-      if the object was obtained by the [User] object's get(), all() 
-      or xall() methods. 
+        Refer to "Result explanation" section of: 
+        http://www.scribd.com/developers/api?method_name=docs.getList 
+        if the object was obtained by the [User] object's get(), all() 
+        or xall() methods. 
        
-      Refer to "Result explanation" section of: 
-      http://www.scribd.com/developers/api?method_name=docs.search 
-      if the object was obtained by find() or xfind(). 
+        Refer to "Result explanation" section of: 
+        http://www.scribd.com/developers/api?method_name=docs.search 
+        if the object was obtained by find() or xfind(). 
        
-      Refer to "Result explanation" section of: 
-      http://www.scribd.com/developers/api?method_name=docs.upload 
-      if the object was obtained by the [User] object's upload() 
-      method. 
+        Refer to "Result explanation" section of: 
+        http://www.scribd.com/developers/api?method_name=docs.upload 
+        if the object was obtained by the [User] object's upload() 
+        method. 
      
-      If the owner attribute points to a true owner of the document, 
-      load() method may be used to obtain the full set of attributes. 
-      Refer to the method's documentation for more information. 
+        If the owner attribute points to a true owner of the document, 
+        load() method may be used to obtain the full set of attributes. 
+        Refer to the method's documentation for more information. 
      
     Method resolution order: 
         [Document] 
@@ -55,22 +55,22 @@ class *Document*([Resource])
         Obtains and returns the document conversion status. 
          
         Returns: 
-          Refer to the "Result explanation" section of: 
-          http://www.scribd.com/developers/api?method_name=docs.getConversionStatus 
+            Refer to the "Result explanation" section of: 
+            http://www.scribd.com/developers/api?method_name=docs.getConversionStatus 
      
     *get_download_url*(self, doc_type='original') 
         Returns a link that can be used to download a static version of the 
         document. 
          
         Parameters: 
-          Refer to the "Parameters" section of: 
-          http://www.scribd.com/developers/api?method_name=docs.getDownloadUrl 
+            Refer to the "Parameters" section of: 
+            http://www.scribd.com/developers/api?method_name=docs.getDownloadUrl 
          
-          Parameters "api_key", "api_sig", "session_key", "my_user_id", 
-          "doc_id" are managed internally by the library. 
+            Parameters "api_key", "api_sig", "session_key", "my_user_id", 
+            "doc_id" are managed internally by the library. 
            
         Returns: 
-          An URL (string). 
+            An URL (string). 
      
     *load*(self) 
         Retrieves the detailed meta-data for this document and updates 
@@ -88,9 +88,9 @@ class *Document*([Resource])
         attributes including doc_id and title remain intact. 
          
         Parameters: 
-          Refer to the User.upload() method. 
+            Refer to the User.upload() method. 
            
-          Parameter "rev_id" is managed internally by the library. 
+            Parameter "rev_id" is managed internally by the library. 
      
     *save*(self) 
         Saves the changed object's resource attributes. 

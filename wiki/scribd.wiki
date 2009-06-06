@@ -55,10 +55,10 @@
         Searches for public documents and returns a list of them. 
          
         Parameters: 
-          Refer to User.find() method. 
+            Refer to User.find() method. 
            
         Returns: 
-          A list of [Document] objects. 
+            A list of [Document] objects. 
          
         This function searches for public documents by default. 
          
@@ -75,7 +75,7 @@
             The user's password. 
          
         Returns: 
-          A [User] object. 
+            A [User] object. 
      
     *signup*(username, password, email, name=None) 
         Creates a new Scribd user and returns the corresponding User object. 
@@ -90,7 +90,7 @@
             E-mail address of the user. 
          
         Returns: 
-          A [User] object. 
+            A [User] object. 
      
     *update*(docs, `*``*`fields) 
         A faster way to set the same attribute of many documents. 
@@ -102,16 +102,16 @@
             Document attributes to set. 
          
         Example: 
-          Instead of: 
+            Instead of: 
          
-              for doc in docs: 
-                  doc.some_attribute_1 = some_value_1 
-                  doc.some_attribute_2 = some_value_2 
-                  doc.save() 
-          use: 
+                for doc in docs: 
+                    doc.some_attribute_1 = some_value_1 
+                    doc.some_attribute_2 = some_value_2 
+                    doc.save() 
+            use: 
          
-              update(docs, some_attribute_1=some_value_1, 
-                           some_attribute_2=some_value_2) 
+                update(docs, some_attribute_1=some_value_1, 
+                             some_attribute_2=some_value_2) 
              
         All documents must have the same owner. The operation is faster because 
         it requires only one API call. 
@@ -121,10 +121,10 @@
         searching for documents and iterating over them. 
          
         Parameters: 
-          Refer to User.xfind() method. 
+            Refer to User.xfind() method. 
            
         Returns: 
-          A generator object yielding [Document] objects. 
+            A generator object yielding [Document] objects. 
          
         This function searches for public documents by default. 
          
