@@ -85,8 +85,9 @@ class *User*([Resource])
         Returns: 
             An URL (string). 
      
-    *upload*(self, file, `*``*`kwargs) 
-        Uploads a new document and returns a document object. 
+    *upload*(self, file, name=None, `*``*`kwargs) 
+        Uploads a file object as a new document and returns the 
+        corresponding document object. 
          
         Parameters: 
             Refer to the "Parameters" section of: 
@@ -95,15 +96,59 @@ class *User*([Resource])
             Parameters "api_key", "api_sig", "session_key", "my_user_id" 
             are managed internally by the library. 
          
-            Parameter "file" has a different meaning. 
+            Parameter "file" is documented below. 
          
-        Modified parameters:           
           file 
-            (required) File to upload. Either a file-alike object or an URL 
-            string. If set to an URL, the file is uploaded from that URL. 
-            If set to a file object, the file is loaded into memory using the 
-            read() method and uploaded. The name of the file is obtained from 
-            the "name" attribute. 
+            (required) File-alike object to upload. The file is loaded 
+            into memory using the read() method and uploaded. 
+          name 
+            (optional) Name of the file. Either a full path or just the 
+            name. Only the name is used. Does not have to point to an 
+            existing file. If None, the name will be read from the "name" 
+            attribute of the file object (all true file objects provide 
+            the "name" attribute). 
+         
+        Returns: 
+            A [Document] object. 
+     
+    *upload_from_url*(self, url, `*``*`kwargs) 
+        Uploads a file from a remote URL as a new document and returns 
+        the corresponding document object. 
+         
+        Parameters: 
+            Refer to the "Parameters" section of: 
+            http://www.scribd.com/developers/api?method_name=docs.upload 
+         
+            Parameters "api_key", "api_sig", "session_key", "my_user_id" 
+            are managed internally by the library. 
+             
+            Parameter "file" is not supported. 
+         
+          url 
+            (required) A URL of the document to upload. 
+         
+        Returns: 
+            A [Document] object. 
+     
+    *upload_raw*(self, data, name, `*``*`kwargs) 
+        Uploads a file from a raw buffer as a new document and returns 
+        the corresponding document object. 
+         
+        Parameters: 
+            Refer to the "Parameters" section of: 
+            http://www.scribd.com/developers/api?method_name=docs.upload 
+         
+            Parameters "api_key", "api_sig", "session_key", "my_user_id" 
+            are managed internally by the library. 
+             
+            Parameter "file" is not supported. 
+         
+          data 
+            (required) A raw document file data to upload. 
+          name 
+            (required) Name of the uploaded file. Either a full path or 
+            just the name. Only the name is used. Does not have to point 
+            to an existing file. 
          
         Returns: 
             A [Document] object. 
