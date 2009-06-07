@@ -135,5 +135,5 @@
     *api_user* = <scribd.[User] 'api_user'> 
  
 *VERSION* 
-    0.9.7 
+    0.9.8 
  </pre>
