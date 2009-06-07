@@ -1,6 +1,6 @@
 == Examples ==
 
-This page lists example code snippets using [scribd] library.
+This page lists example code snippets using the [scribd] library.
 
   * [AppEngineUpload]
 
