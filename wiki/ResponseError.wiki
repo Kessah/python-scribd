@@ -6,7 +6,7 @@ class *ResponseError*(exceptions.Exception)
     for explanation of the error codes. 
      
     Method resolution order: 
-        [ResponseError] 
+        ResponseError 
         exceptions.Exception 
         exceptions.BaseException 
         object 

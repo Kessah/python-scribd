@@ -3,7 +3,7 @@ class *MalformedResponseError*(exceptions.Exception)
     Exception raised if a malformed response is received from the HOST. 
      
     Method resolution order: 
-        [MalformedResponseError] 
+        MalformedResponseError 
         exceptions.Exception 
         exceptions.BaseException 
         object 

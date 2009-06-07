@@ -4,7 +4,7 @@ class *NullHandler*(logging.Handler)
     doesn't use the logging module. 
      
     Method resolution order: 
-        [NullHandler] 
+        NullHandler 
         logging.Handler 
         logging.Filterer 
      

@@ -9,7 +9,7 @@ class *User*([Resource])
         http://www.scribd.com/developers/api?method_name=user.login 
      
     Method resolution order: 
-        [User] 
+        User 
         [Resource] 
         object 
      

@@ -42,7 +42,7 @@ class *Document*([Resource])
         Refer to the method's documentation for more information. 
      
     Method resolution order: 
-        [Document] 
+        Document 
         [Resource] 
         object 
      

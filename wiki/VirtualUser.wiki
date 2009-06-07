@@ -17,7 +17,7 @@ class *VirtualUser*([User])
       None. 
      
     Method resolution order: 
-        [VirtualUser] 
+        VirtualUser 
         [User] 
         [Resource] 
         object 
