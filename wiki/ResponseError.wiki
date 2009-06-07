@@ -1,5 +1,5 @@
 <pre>
-class *ResponseError*(exceptions.Exception) 
+class *ResponseError*([Error]) 
     Exception raised if HOST responses with an error message. 
         
     Refer to the API documentation (Error codes section of various methods) 
@@ -7,6 +7,7 @@ class *ResponseError*(exceptions.Exception)
      
     Method resolution order: 
         ResponseError 
+        [Error] 
         exceptions.Exception 
         exceptions.BaseException 
         object 

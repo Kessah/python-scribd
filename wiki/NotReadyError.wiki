@@ -1,10 +1,11 @@
 <pre>
-class *NotReadyError*(exceptions.Exception) 
+class *NotReadyError*([Error]) 
     Exception raised if operation is attempted before the API key and 
     secret are set. 
      
     Method resolution order: 
         NotReadyError 
+        [Error] 
         exceptions.Exception 
         exceptions.BaseException 
         object 

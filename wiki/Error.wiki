@@ -1,10 +1,9 @@
 <pre>
-class *MalformedResponseError*([Error]) 
-    Exception raised if a malformed response is received from the HOST. 
+class *Error*(exceptions.Exception) 
+    Base class for all exceptions in this package. 
      
     Method resolution order: 
-        MalformedResponseError 
-        [Error] 
+        Error 
         exceptions.Exception 
         exceptions.BaseException 
         object 
