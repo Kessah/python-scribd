@@ -1,0 +1,7 @@
+== Examples ==
+
+This page lists example code snippets using [scribd] library.
+
+  * [AppEngineUpload]
+
+    This example creates a web application listing all users documents and allowing to upload new ones. The application is meant to run on [code.google.com/appengine Google App Engine], a web applications development platform using Python (and Java) language, from Google.
