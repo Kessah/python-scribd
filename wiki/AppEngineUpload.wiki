@@ -1,3 +1,9 @@
+This is a simple [http://code.google.com/appengine/ App Engine] example using the [scribd] library.
+
+It uses the *webapp* framework to create two simple pages. First one (`/`), created in the `Form` class, lists all documents belonging to the Scribd API account user. The list is followed by a file upload form. The form sends the file to the second page (`/upload`), created in the `Upload` class.
+
+The upload page extracts the file from the request and sends it to the [scribd] library for uploading to the Scribd platform. This is immediately followed by redirection to the first page which at this point will list the freshly uploaded file among other documents.
+
 {{{
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
