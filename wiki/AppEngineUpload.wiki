@@ -42,7 +42,7 @@ class Form(webapp.RequestHandler):
             # Add table row.
             out.append("""<tr>
                             <td>%(status)s</td>
-                            <td><a href="%(link)s"><img src="%(thumbnail)s" border="0"></a></td>
+                            <td><a href="%(link)s"><img src="%(thumbnail)s" border="0" width="60" height="80"></a></td>
                             <td><a href="%(link)s">%(title)s</a></td>
                             <td><pre>%(description)s</pre></td>
                           </tr>""" % args)
@@ -52,8 +52,10 @@ class Form(webapp.RequestHandler):
         
         # Add file form for uploading.
         out.append("""<form method="post" enctype="multipart/form-data" action="/upload">
-                        <input type="file" name="file" />
+                        <input type="file" name="file" /><br/>
+                        <textarea name="description" cols="30" rows="4">Description</textarea><br/>
                         <input type="submit" />
+                        <input type="reset" />
                       </form>""")
 
         # End the document.        
@@ -73,7 +75,11 @@ class Upload(webapp.RequestHandler):
         name = self.request.POST.get('file').filename
         
         # Upload the file to Scribd.
-        scribd.api_user.upload(file, name, access='private')
+        document = scribd.api_user.upload(file, name, access='private')
+        
+        # Set the description.
+        document.description = self.request.get('description')
+        document.save()
 
         # Redirect back to the main page.
         self.redirect('/')
