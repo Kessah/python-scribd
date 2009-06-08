@@ -42,7 +42,7 @@ class Form(webapp.RequestHandler):
             # Add table row.
             out.append("""<tr>
                             <td>%(status)s</td>
-                            <td><a href="%(link)s"><img src="%(thumbnail)s" border="0" width="60" height="80"></a></td>
+                            <td><a href="%(link)s"><img src="%(thumbnail)s" border="0"></a></td>
                             <td><a href="%(link)s">%(title)s</a></td>
                             <td><pre>%(description)s</pre></td>
                           </tr>""" % args)
