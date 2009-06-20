@@ -27,6 +27,10 @@ class *User*([Resource])
            
         Returns: 
             A list of [Document] objects. 
+         
+            Refer to "Result explanation" section of: 
+            http://www.scribd.com/developers/api?method_name=docs.getList 
+            for a list of document's initial resource attributes. 
      
     *find*(self, query, `*``*`kwargs) 
         Searches for documents and returns a list of them. 
@@ -59,6 +63,10 @@ class *User*([Resource])
          
         Returns: 
             A list of [Document] objects. 
+         
+            Refer to "Result explanation" section of: 
+            http://www.scribd.com/developers/api?method_name=docs.search 
+            for a list of document's initial resource attributes. 
      
     *get*(self, doc_id) 
         Returns a document with the specified id. 
@@ -70,6 +78,10 @@ class *User*([Resource])
          
         Returns: 
             A [Document] object. 
+         
+            Refer to "Result explanation" section of: 
+            http://www.scribd.com/developers/api?method_name=docs.getSettings 
+            for a list of document's initial resource attributes. 
      
     *get_autologin_url*(self, next_url='') 
         Creates and returns an URL that logs the user in when visited and 
@@ -105,11 +117,15 @@ class *User*([Resource])
             (optional) Name of the file. Either a full path or just the 
             name. Only the name is used. Does not have to point to an 
             existing file. If None, the name will be read from the "name" 
-            attribute of the file object (all true file objects provide 
-            the "name" attribute). 
+            attribute of the file object (objects created using the open() 
+            built-in function provide this attribute). 
          
         Returns: 
             A [Document] object. 
+         
+            Refer to "Result explanation" section of: 
+            http://www.scribd.com/developers/api?method_name=docs.upload 
+            for a list of document's initial resource attributes. 
      
     *upload_from_url*(self, url, `*``*`kwargs) 
         Uploads a file from a remote URL as a new document and returns 
@@ -129,29 +145,10 @@ class *User*([Resource])
          
         Returns: 
             A [Document] object. 
-     
-    *upload_raw*(self, data, name, `*``*`kwargs) 
-        Uploads a file from a raw buffer as a new document and returns 
-        the corresponding document object. 
          
-        Parameters: 
-            Refer to the "Parameters" section of: 
+            Refer to "Result explanation" section of: 
             http://www.scribd.com/developers/api?method_name=docs.upload 
-         
-            Parameters "api_key", "api_sig", "session_key", "my_user_id" 
-            are managed internally by the library. 
-             
-            Parameter "file" is not supported. 
-         
-          data 
-            (required) A raw document file data to upload. 
-          name 
-            (required) Name of the uploaded file. Either a full path or 
-            just the name. Only the name is used. Does not have to point 
-            to an existing file. 
-         
-        Returns: 
-            A [Document] object. 
+            for a list of document's initial resource attributes. 
      
     *xall*(self, `*``*`kwargs) 
         Similar to all() method but returns a generator object 
@@ -170,10 +167,14 @@ class *User*([Resource])
           page_size 
             (optional) The number of documents acquired by a single API 
             call. The generator repeats the calls until all documents are 
-            returned. 
+            returned. Defaults to 100. 
          
         Returns: 
             A generator object yielding [Document] objects. 
+         
+            Refer to "Result explanation" section of: 
+            http://www.scribd.com/developers/api?method_name=docs.getList 
+            for a list of document's initial resource attributes. 
          
         Note. If you're not interested in all documents (currently there 
         may be max. 1000 of them), just stop iterating the generator object. 
@@ -201,6 +202,10 @@ class *User*([Resource])
          
         Returns: 
             A generator object yielding [Document] objects. 
+         
+            Refer to "Result explanation" section of: 
+            http://www.scribd.com/developers/api?method_name=docs.search 
+            for a list of document's initial resource attributes. 
          
         Note. If you're not interested in all documents (currently there 
         may be max. 1000 of them), just stop iterating the generator object. 

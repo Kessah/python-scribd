@@ -25,17 +25,22 @@ class *Document*([Resource])
      
         Refer to "Result explanation" section of: 
         http://www.scribd.com/developers/api?method_name=docs.getList 
-        if the object was obtained by the [User] object's get(), all() 
-        or xall() methods. 
+        if the object was obtained by the [User] object's all() or 
+        xall() methods. 
        
         Refer to "Result explanation" section of: 
         http://www.scribd.com/developers/api?method_name=docs.search 
-        if the object was obtained by find() or xfind(). 
+        if the object was obtained by find() or xfind() (either global 
+        functions or [User] object's methods). 
        
         Refer to "Result explanation" section of: 
         http://www.scribd.com/developers/api?method_name=docs.upload 
-        if the object was obtained by the [User] object's upload() 
-        method. 
+        if the object was obtained by one of the [User] object's 
+        uploads methods. 
+     
+        Refer to "Result explanation" section of: 
+        http://www.scribd.com/developers/api?method_name=docs.getSettings 
+        if the object was obtained by the [User] object's get() method. 
      
         If the owner attribute points to a true owner of the document, 
         load() method may be used to obtain the full set of attributes. 
@@ -52,10 +57,10 @@ class *Document*([Resource])
         Deletes the document from Scribd platform. 
      
     *get_conversion_status*(self) 
-        Obtains and returns the document conversion status. 
+        Obtains and returns the document current conversion status. 
          
         Returns: 
-            Refer to the "Result explanation" section of: 
+            A string. Refer to the "Result explanation" section of: 
             http://www.scribd.com/developers/api?method_name=docs.getConversionStatus 
      
     *get_download_url*(self, doc_type='original') 
@@ -74,6 +79,10 @@ class *Document*([Resource])
      
     *get_scribd_url*(self) 
         Returns a link to the document's page on scribd.com. 
+         
+        Works for private documents too by adding the secret 
+        password to the link. May call the load() method to 
+        obtain the secret password. 
      
     *load*(self) 
         Retrieves the detailed meta-data for this document and updates 
