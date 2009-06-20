@@ -164,4 +164,4 @@ Determining a true document owner may not always be possible, for example if the
 
 The implication is that if the owner object isn't a true owner of the document, operations like `load()` or `save()` cannot be performed and fail.
 
-In the above example, we've used two ways of obtaining the [Document] objects (`upload()` and `all()` methods), both of which are able to clearly determine the owner (it is the user object the methods were called on). Therefore it was safe to call `load()`and `save()` method on these objects.
+In the above example, we've used two ways of obtaining the [Document] objects (`upload()` and `all()` methods), both of which are able to clearly determine the owner (it is the user object the methods were called on). Therefore it was safe to call `load()`and `save()` on these objects.
