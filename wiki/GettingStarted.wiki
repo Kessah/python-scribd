@@ -134,16 +134,16 @@ Now lets do a little test and see if the values were really saved. First we'll d
 >>> del document
 }}}
 
-Now we're going to list all documents already uploaded.
+Now we're going to reacquire the document object. In this example we're going to do it by accessing the list of all already uploaded documents. Assuming that we're using a fresh user account, the list will contain only one document, the one we've uploaded before.
 
 {{{
 >>> all_documents = user.all()
 >>> document = all_documents[0]
 }}}
 
-Assuming that we're using a fresh user account, the `all()` call will return a list with a single [Document] object which we've uploaded before. We assign this object to the `document` variable.
+The second line assigns the only [Document] object to the `document` variable.
 
-To save bandwidth during the `all()` call, not all resource attributes of the document objects are transmitted and set. We have to explicitly load them:
+In normal circumstances, the `all()` call may return a lot of documents. To save network bandwidth, the returned document objects provide only the basic resource attributes by default. The three attributes we've set before are not among them. We have to explicitly tell the object to set them up, using the `load()` method:
 
 {{{
 >>> document.load()
@@ -160,8 +160,8 @@ Now we should be able to read back our attributes:
 
 One thing to note here that happens behind the scenes is that the [Document] objects perform all operations through their owner - a [User] object stored in the document's `owner` attribute.
 
-Establishing a true document owner may not always be possible, for example if the document objects are created by searching in the public documents library. In such case, a fallback user is used, the already known `api_user` object.
+Determining a true document owner may not always be possible, for example if the document objects are created by searching in the public documents library. In such case, a fallback user is used, the already known `api_user` object.
 
 The implication is that if the owner object isn't a true owner of the document, operations like `load()` or `save()` cannot be performed and fail.
 
-In the above example, we've used two ways of creating a [Document] objects (`upload()` and `all()`), both of which are able to clearly determine the owner. Therefore it was safe to call `load()`and `save()` on these objects.
+In the above example, we've used two ways of obtaining the [Document] objects (`upload()` and `all()` methods), both of which are able to clearly determine the owner (it is the user object the methods were called on). Therefore it was safe to call `load()`and `save()` method on these objects.
