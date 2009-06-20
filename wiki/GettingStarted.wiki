@@ -105,7 +105,7 @@ If you're read the [User] object documentation, you know that it provides you wi
 >>> document = user.upload(open('some_document.pdf', 'rb'))
 }}}
 
-In this example, the `user` is the [User] or [VirtualUser] object as described in previous chapter. We pass an opened file object tp the `upload()` method. The method will read the file and send it to the server along with the filename read from the file object's `name` attribute. There are other uploading methods which might better suite a different use cases. Refer to the [User] object documentation.
+In this example, the `user` is the [User] or [VirtualUser] object as described in previous chapter. We pass an opened file object to the `upload()` method. The method will read the file and send it to the server along with the filename read from the file object's `name` attribute. There are other uploading methods which might better suite a different use cases. Refer to the [User] object documentation.
 
 The method returns a [Document] object which represents a document on the Scribd platform.
 
