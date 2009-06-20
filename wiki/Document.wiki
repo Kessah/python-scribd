@@ -102,13 +102,25 @@ class *Document*([Resource])
         Requires the document owner to be the user that uploaded this 
         document. 
      
-    *replace*(self, file, `*``*`kwargs) 
-        Uploads a new document file in place of the current one. All 
-        attributes including doc_id and title remain intact. 
+    *replace*(self, file, name=None, `*``*`kwargs) 
+        Uploads a new file in place of the current document. All 
+        resource attributes including doc_id remain intact. 
          
         Parameters: 
-            Refer to the User.upload() method. 
+            Refer to the [User].upload() method. 
            
+            Parameter "rev_id" is managed internally by the library. 
+         
+        Requires the document owner to be the user that uploaded this 
+        document. 
+     
+    *replace_from_url*(self, url, `*``*`kwargs) 
+        Uploads a new file from a remote URL in place of the current 
+        document. All resource attributes including doc_id remain intact. 
+         
+        Parameters: 
+            Refer to the [User].upload_from_url() method. 
+         
             Parameter "rev_id" is managed internally by the library. 
          
         Requires the document owner to be the user that uploaded this 
