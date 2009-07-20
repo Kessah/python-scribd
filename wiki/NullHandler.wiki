@@ -15,6 +15,10 @@ class *NullHandler*(logging.Handler)
     ---------------------------------------------------------------------- 
     Methods inherited from logging.Handler: 
      
+    *`_``_`init`_``_`*(self, level=0) 
+        Initializes the instance - basically setting the formatter to None 
+        and the filter list to empty. 
+     
     *acquire*(self) 
         Acquire the I/O thread lock. 
      

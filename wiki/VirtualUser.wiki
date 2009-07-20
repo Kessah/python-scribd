@@ -24,6 +24,15 @@ class *VirtualUser*([User])
      
     Methods defined here: 
      
+    *`_``_`init`_``_`*(self, my_user_id) 
+        Instantiates a new object. 
+         
+        Parameters: 
+          my_user_id 
+            Name of the virtual user. Every time an object is created 
+            with the same name, it will refer to the same set of 
+            documents. 
+     
     *get_autologin_url*(self, next_path='') 
         This method is not supported by virtual users. 
      
