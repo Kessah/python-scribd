@@ -2,7 +2,7 @@
 class *Document*([Resource]) 
     Represents a Scribd document. 
      
-    Use methods of the User objects to instantiate. 
+    Use methods of the [User] objects to instantiate. 
      
     Attributes: 
       owner 

@@ -10,7 +10,7 @@ class *VirtualUser*([User])
     name of the virtual user to the constructor. This will most probably 
     be the name used by your own authentication system. 
      
-    Because this is a subclass of the User class, the virtual users provide 
+    Because this is a subclass of the [User] class, the virtual users provide 
     the same set of operations (except get_autologin_url()) as normal users. 
      
     Resource attributes: 
@@ -30,8 +30,7 @@ class *VirtualUser*([User])
         Parameters: 
           my_user_id 
             Name of the virtual user. Every time an object is created 
-            with the same name, it will refer to the same set of 
-            documents. 
+            with the same name, it will refer to the same virtual user. 
      
     *get_autologin_url*(self, next_path='') 
         This method is not supported by virtual users. 
@@ -82,7 +81,7 @@ class *VirtualUser*([User])
             the scribd.api_user which will impact the ability to change 
             the document's properties. You may set the owner attributes 
             later if you have can determine the documents owner yourself. 
-            Refer to the Document class for operations requiring a proper 
+            Refer to the [Document] class for operations requiring a proper 
             owner object. 
          
         Returns: 

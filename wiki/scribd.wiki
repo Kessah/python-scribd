@@ -55,7 +55,7 @@
         Searches for public documents and returns a list of them. 
          
         Parameters: 
-            Refer to User.find() method. 
+            Refer to [User].find() method. 
            
         Returns: 
             A list of [Document] objects. 
@@ -66,7 +66,7 @@
         scribd.api_user object. 
      
     *login*(username, password) 
-        Logs the given Scribd user in and returns the corresponding User object. 
+        Logs the given Scribd user in and returns the corresponding [User] object. 
          
         Parameters: 
           username 
@@ -78,7 +78,7 @@
             A [User] object. 
      
     *signup*(username, password, email, name=None) 
-        Creates a new Scribd user and returns the corresponding User object. 
+        Creates a new Scribd user and returns the corresponding [User] object. 
         The user is already logged in. 
          
         Parameters: 
@@ -121,7 +121,7 @@
         searching for documents and iterating over them. 
          
         Parameters: 
-            Refer to User.xfind() method. 
+            Refer to [User].xfind() method. 
            
         Returns: 
             A generator object yielding [Document] objects. 

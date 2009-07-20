@@ -58,7 +58,7 @@ class *User*([Resource])
             the scribd.api_user which will impact the ability to change 
             the document's properties. You may set the owner attributes 
             later if you have can determine the documents owner yourself. 
-            Refer to the Document class for operations requiring a proper 
+            Refer to the [Document] class for operations requiring a proper 
             owner object. 
          
         Returns: 
