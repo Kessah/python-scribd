@@ -2,6 +2,16 @@
 
 This page lists example code snippets using the [scribd] library.
 
-  * [AppEngineUpload]
+  * [http://code.google.com/p/python-scribd/source/browse/trunk/examples/upload.py upload.py]
 
-    This example creates a web application listing all documents belonging to the API user and allowing to upload new ones. The application is meant to run on [http://code.google.com/appengine Google App Engine], a web applications development platform using Python (and Java) language, from Google.
+    Uploading a text file to scribd.com and removing it afterwards.
+
+  * [http://code.google.com/p/python-scribd/source/browse/trunk/examples/user.py user.py]
+
+    Signing in as a scribd.com user and accessing users's documents.
+
+  * [http://code.google.com/p/python-scribd/source/browse/trunk/examples/appengine.py appengine.py]
+
+    Creating a web application listing all documents belonging to the API user and allowing to upload new ones.
+
+    The script is meant to run on [http://code.google.com/appengine Google App Engine], a web applications development platform using Python (and Java) language, from Google.
