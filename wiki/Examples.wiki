@@ -1,6 +1,6 @@
 == Examples ==
 
-This page lists example script using the [scribd] library. All examples are also included in the distribution files.
+This page lists example script using the [scribd] library. The distribution files contain all examples available at the time of release.
 
   * [http://code.google.com/p/python-scribd/source/browse/trunk/examples/upload.py upload.py]
 
