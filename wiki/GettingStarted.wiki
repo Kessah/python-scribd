@@ -30,7 +30,7 @@ The user account has to be enabled for API access. This is done using the form o
 
 The API account is identified by an *API key*. This key has to be passed to the library before using it. You will find it on your profile page on scribd.com after enabling the API access.
 
-The page also gives you an *API secret* key. This is used to digitally sign all requests sent to the API server to prevent the middle-man attacks. The signing is optional for the API but the library enforces it so you'll this secret key too.
+The page also gives you an *API secret* key. This is used to digitally sign all requests sent to the API server to prevent the middle-man attacks. The signing is optional for the API but the library enforces it (for security reasons) so you'll need this key too.
 
 == Initialization ==
 
