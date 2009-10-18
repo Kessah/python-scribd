@@ -1,5 +1,10 @@
 #summary Log of the changes made to successive releases.
 
+== Version 1.1.0 ==
+
+  * Support for new Scribd API security features.
+  * True/False can be passed as parameters expecting 1/0 values.
+
 == Version 1.0.1 ==
 
   * Fixed a bug in User.find and User.xfind "offset" argument calculation.
