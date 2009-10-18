@@ -60,6 +60,16 @@ class *Document*([Resource])
         Requires the document owner to be the user that uploaded this 
         document. 
      
+    *get_access_list*(self) 
+        This method can be used for tracking and verification purposes. It returns 
+        a list of virtual users currently authorized to view this secure document. 
+         
+        Returns: 
+            A list of [VirtualUser] objects. 
+         
+        This method is part of iPaper Secure. For more info about iPaper Secure visit: 
+        http://www.scribd.com/publisher/ipaper_secure 
+     
     *get_conversion_status*(self) 
         Obtains and returns the document current conversion status. 
          
@@ -139,6 +149,21 @@ class *Document*([Resource])
          
         Requires the document owner to be the user that uploaded this 
         document. 
+     
+    *set_access*(self, user, allowed) 
+        This method allows you to disable a virtual user's access to this secure 
+        document, or to re-enable it after a previous call. It is not necessary nor 
+        possible to grant initial access to a document using this call - that is done 
+        through the embed code. 
+         
+        Parameters: 
+          user 
+            Virtual user's name or [VirtualUser] object. 
+          allowed 
+            If False, disables access. If True, re-enables access. 
+         
+        This method is part of iPaper Secure. For more info about iPaper Secure visit: 
+        http://www.scribd.com/publisher/ipaper_secure 
      
     ---------------------------------------------------------------------- 
     Methods inherited from [Resource]: 
