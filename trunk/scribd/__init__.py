@@ -844,7 +844,7 @@ def send_request(method, progress_callback=None, req_buffer=None, **fields):
             if isinstance(v, unicode):
                 v = v.encode('utf8')
             elif isinstance(v, tuple): # file
-                v = (v[0], str(v[1])) # (data, name)
+                v = (v[0], unicode(v[1]).encode('utf8')) # (data, name)
             elif isinstance(v, bool):
                 v = str(int(v)) # '0' or '1'
             else:
